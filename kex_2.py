@@ -57,12 +57,29 @@ def main():
             '12':1,
             '13':1
         }
-    ibm4 = IBMModel4(alignedSentences, 2, trg_classes, src_classes )
-    for result in alignedSentences:
-        print(result.words)
-        print(result.mots)
-        print(result.alignment)
+    ibm4 = IBMModel4(alignedSentences, 1, trg_classes, src_classes )
     
+    percentages=[]
+    percentages.append(format(ibm4.translation_table['one']['1']))
+    percentages.append(format(ibm4.translation_table['two']['2']))
+    percentages.append(format(ibm4.translation_table['three']['3']))
+    percentages.append(format(ibm4.translation_table['four']['4']))
+    percentages.append(format(ibm4.translation_table['five']['5']))
+    percentages.append(format(ibm4.translation_table['six']['6']))
+    percentages.append(format(ibm4.translation_table['seven']['7']))
+    percentages.append(format(ibm4.translation_table['eight']['8']))
+    percentages.append(format(ibm4.translation_table['nine']['9']))
+    percentages.append(format(ibm4.translation_table['plus']['10']))
+    percentages.append(format(ibm4.translation_table['minus']['11']))
+    percentages.append(format(ibm4.translation_table['times']['12']))
+    percentages.append(format(ibm4.translation_table['divide']['13']))
+  
+    sum = 0
+    for number in percentages:
+        sum += float(number)
+    print(sum/13.0)	
+    
+
     print("kex_2.py complete")
 
 def checker(input, ret ):
